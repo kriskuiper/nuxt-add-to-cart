@@ -11,7 +11,10 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.10.0",
     "nuxt": "^3.8.2",
+    "vitest": "^0.34.6",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   }
