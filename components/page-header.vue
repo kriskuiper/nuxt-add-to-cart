@@ -1,13 +1,15 @@
 <template>
   <header class="header">
     <p class="header__logo">MyStore</p>
+
+    <NuxtLink to="/checkout/cart" class="header__cart-link"> Cart </NuxtLink>
   </header>
 </template>
 
 <style lang="scss">
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   border-bottom: 1px solid lightgray;
   padding: 1rem;
 
