@@ -1,18 +1,32 @@
 import type { Product } from "@/types/api";
 import { keys } from "@/lib/constants";
 
+// TODO: ideally move localStorage things to a seperate composable
 const useCart = () => {
-  const cart = ref();
+  const cart = ref<Product[]>([]);
+
   const addItem = (item: Product) => {
-    console.warn(`Add item`, item);
+    const updatedItems = [...cart.value, item];
+
+    cart.value = updatedItems;
+    window.localStorage.setItem(keys.CART, JSON.stringify(updatedItems));
   };
+
   const removeItem = (item: Product) => {
-    console.warn(`Remove item`, item);
+    const filteredItems = cart.value.filter(
+      (cartItem) => cartItem.id !== item.id
+    );
+
+    cart.value = filteredItems;
+    window.localStorage.setItem(keys.CART, JSON.stringify(filteredItems));
   };
 
   onMounted(() => {
-    // TODO: ideally move storage things to a seperate composable
-    cart.value = window.localStorage.getItem(keys.CART);
+    const cartFromStorage = window.localStorage.getItem(keys.CART);
+
+    if (!cartFromStorage) return;
+
+    cart.value = JSON.parse(cartFromStorage);
   });
 
   return {

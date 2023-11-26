@@ -13,7 +13,7 @@
       <h1>{{ product.title }}</h1>
       <p>{{ product.description }}</p>
 
-      <button @click="addToCart">Add to cart</button>
+      <button @click="() => addItem(product)">Add to cart</button>
     </section>
   </div>
 </template>
@@ -27,10 +27,6 @@ const response = await fetch(
   `https://fakestoreapi.com/products/${route.params.slug}`
 );
 const product = await response.json();
-
-function addToCart() {
-  addItem(product);
-}
 </script>
 
 <style lang="scss">

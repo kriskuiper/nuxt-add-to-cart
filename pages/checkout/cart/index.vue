@@ -5,7 +5,7 @@
     <div v-for="item in cart">
       <h2>{{ item.title }}</h2>
 
-      <button @click="() => removeItem(item)"></button>
+      <button @click="() => removeItem(item)">Remove</button>
     </div>
   </div>
 </template>
