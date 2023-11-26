@@ -2,8 +2,7 @@ import type { Product } from "@/types/api";
 import { keys } from "@/lib/constants";
 
 const useCart = () => {
-  const storage = useBrowserStorage();
-  const cart = ref(storage.get(keys.CART));
+  const cart = ref();
   const addItem = (item: Product) => {
     console.warn(`Add item`, item);
   };
@@ -11,9 +10,16 @@ const useCart = () => {
     console.warn(`Remove item`, item);
   };
 
+  onMounted(() => {
+    // TODO: ideally move storage things to a seperate composable
+    cart.value = window.localStorage.getItem(keys.CART);
+  });
+
   return {
     cart,
     addItem,
     removeItem,
   };
 };
+
+export default useCart;

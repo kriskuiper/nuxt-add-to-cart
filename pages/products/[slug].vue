@@ -19,6 +19,7 @@
 </template>
 
 <script setup lang="ts">
+const { addItem } = useCart();
 const route = useRoute();
 
 // TODO: clean up data fetching from API
@@ -28,7 +29,7 @@ const response = await fetch(
 const product = await response.json();
 
 function addToCart() {
-  console.warn("TODO: add to cart");
+  addItem(product);
 }
 </script>
 
