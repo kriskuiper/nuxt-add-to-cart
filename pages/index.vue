@@ -26,12 +26,12 @@ const products = await response.json();
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 
-  @media (min-width: 768px) {
+  @media ($media-md) {
     grid-template-columns: repeat(3, 1fr);
     gap: 4rem;
   }
 
-  @media (min-width: 1038px) {
+  @media ($media-lg) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
