@@ -25,5 +25,14 @@ const products = await response.json();
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+  }
+
+  @media (min-width: 1038px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 </style>
