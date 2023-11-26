@@ -2,9 +2,9 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
+## Installation
 
-Make sure to install the dependencies:
+Install dependencies using your package manager
 
 ```bash
 # npm
@@ -20,7 +20,7 @@ yarn install
 bun install
 ```
 
-## Development Server
+## Development
 
 Start the development server on `http://localhost:3000`:
 
@@ -73,3 +73,9 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Wishlist
+
+- [ ] Improve styling all over the application
+- [ ] Clean up fetching data from the API
+- [ ] Clean up inconsistencies
