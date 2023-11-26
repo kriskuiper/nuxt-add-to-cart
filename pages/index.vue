@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <h1>Hello world!</h1>
+    <h1 class="homepage__title">Awesome women's clothing</h1>
 
-    <section class="product-grid">
+    <section class="homepage__product-grid">
       <product-card
         v-for="product in products"
         :product="product"
@@ -21,7 +21,11 @@ const products = await response.json();
 </script>
 
 <style lang="scss">
-.product-grid {
+.homepage__title {
+  margin-bottom: 2rem;
+}
+
+.homepage__product-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
