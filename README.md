@@ -79,3 +79,6 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - [ ] Improve styling all over the application
 - [ ] Clean up fetching data from the API
 - [ ] Clean up inconsistencies
+- [ ] Update README with the following
+  - Docs for testing
+  - Docs for deployment etc.

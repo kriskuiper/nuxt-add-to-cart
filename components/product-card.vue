@@ -1,5 +1,10 @@
 <template>
-  <NuxtLink :to="href" :title="product.title" class="product-card">
+  <NuxtLink
+    :to="href"
+    :title="product.title"
+    class="product-card"
+    data-testid="product-card-link"
+  >
     <figure class="product-card__image-container">
       <img
         :src="product.image"
