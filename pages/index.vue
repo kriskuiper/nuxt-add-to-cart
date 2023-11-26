@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1>Hello world!</h1>
 
     <section class="product-grid">

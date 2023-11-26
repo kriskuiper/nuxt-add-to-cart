@@ -1,18 +1,14 @@
 <template>
-  <div>
+  <div class="container">
     <h1>Cart</h1>
 
-    <product-card
-      v-for="item in cart"
-      :product="item"
-      :href="`/products/${item.id}`"
-    >
-      <template #actions>
-        <button @click.prevent="() => removeItem(item)">
-          Remove from cart
-        </button>
-      </template>
-    </product-card>
+    <div class="cart-page__items">
+      <cart-item
+        v-for="item in cart"
+        :item="item"
+        @remove-button-click="() => removeItem(item)"
+      />
+    </div>
   </div>
 </template>
 
@@ -20,4 +16,10 @@
 const { cart, removeItem } = useCart();
 </script>
 
-<style scoped></style>
+<style>
+.cart-page__items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+</style>
