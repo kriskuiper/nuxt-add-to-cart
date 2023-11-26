@@ -8,13 +8,13 @@
       />
     </figure>
 
-    <p>
+    <p class="product-card__title">
       {{ product.title }}
     </p>
 
     <dl>
       <dt class="visually-hidden">Price:</dt>
-      <dd>{{ product.price }}</dd>
+      <dd class="product-card__price">{{ product.price }}</dd>
     </dl>
 
     <menu v-if="$slots.actions">
@@ -39,5 +39,13 @@ defineProps<ProductCardProps>();
   width: 100%;
   aspect-ratio: 5/8;
   object-fit: cover;
+}
+
+.product-card__title {
+  font-weight: bold;
+}
+
+.product-card__price {
+  color: grey;
 }
 </style>
