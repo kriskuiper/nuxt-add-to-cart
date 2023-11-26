@@ -7,7 +7,7 @@ test("can get to a product detail page", async ({ page }) => {
   expect(page.url()).toContain("products");
 });
 
-test("can add product to cart", async ({ page }) => {
+test("can add and remove product from cart", async ({ page }) => {
   await page.goto("/products/15");
 
   await page.getByRole("button").click();
@@ -18,4 +18,12 @@ test("can add product to cart", async ({ page }) => {
   const cartItem = await page.getByTestId("cart-item");
 
   expect(cartItem).toBeAttached();
+
+  await page.getByRole("button", { name: "Remove item" }).click();
+
+  const emptyStateMessage = await page.getByText(
+    "You don't have any items in your cart"
+  );
+
+  expect(emptyStateMessage).toBeDefined();
 });

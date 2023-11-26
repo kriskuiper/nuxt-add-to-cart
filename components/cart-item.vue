@@ -1,5 +1,5 @@
 <template>
-  <div class="cart-item">
+  <div class="cart-item" data-testid="cart-item">
     <figure class="cart-item__image-container">
       <img :src="item.image" :alt="item.title" class="cart-item__image" />
       <figcaption class="cart-item__title">
