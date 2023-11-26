@@ -2,11 +2,17 @@
   <div>
     <h1>Cart</h1>
 
-    <div v-for="item in cart">
-      <h2>{{ item.title }}</h2>
-
-      <button @click="() => removeItem(item)">Remove</button>
-    </div>
+    <product-card
+      v-for="item in cart"
+      :product="item"
+      :href="`/products/${item.id}`"
+    >
+      <template #actions>
+        <button @click.prevent="() => removeItem(item)">
+          Remove from cart
+        </button>
+      </template>
+    </product-card>
   </div>
 </template>
 

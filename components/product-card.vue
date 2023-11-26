@@ -8,12 +8,18 @@
       />
     </figure>
 
-    <p>{{ product.title }}</p>
+    <p>
+      {{ product.title }}
+    </p>
 
     <dl>
       <dt class="visually-hidden">Price:</dt>
       <dd>{{ product.price }}</dd>
     </dl>
+
+    <menu v-if="$slots.actions">
+      <slot name="actions" />
+    </menu>
   </NuxtLink>
 </template>
 
