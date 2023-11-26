@@ -7,7 +7,13 @@
         class="product-card__image"
       />
     </figure>
-    <NuxtLink :to="`/products/${product.id}`"> to product </NuxtLink>
+
+    <p>{{ product.title }}</p>
+
+    <dl>
+      <dt class="visually-hidden">Price:</dt>
+      <dd>{{ product.price }}</dd>
+    </dl>
   </NuxtLink>
 </template>
 
