@@ -1,18 +1,18 @@
 <template>
   <output class="page-toast">
-    <span class="page-toast__message">
-      {{ message }}
-    </span>
+    <slot />
 
-    <button v-if="isClosable">
+    <button v-if="isClosable" @click="$emit('close')">
       <span class="visually-hidden">Close</span>
+      <X />
     </button>
   </output>
 </template>
 
 <script setup lang="ts">
+import { X } from "lucide-vue-next";
+
 type ToastProps = {
-  message: string;
   isClosable?: boolean;
 };
 
@@ -21,7 +21,12 @@ defineProps<ToastProps>();
 
 <style>
 .page-toast {
-  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: lightgreen;
+  border: 1px solid green;
+  color: green;
   padding: 1rem;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="product-page">
+  <div class="container product-page">
     <figure class="product-page__gallery">
       <img
         :src="product.image"
@@ -10,10 +10,23 @@
     </figure>
 
     <section class="product-page__content">
-      <h1>{{ product.title }}</h1>
-      <p>{{ product.description }}</p>
+      <h1 class="product-page__title">{{ product.title }}</h1>
+      <p class="product-page__description">{{ product.description }}</p>
 
-      <button @click="() => addItem(product)">Add to cart</button>
+      <button @click="handleAddToCart">Add to cart</button>
+
+      <div v-if="toastShouldShow">
+        <page-toast is-closable @close="() => showToast(false)">
+          <div>
+            <span class="product-page__success-message"
+              >Product successfully added!</span
+            >
+            <NuxtLink to="/checkout/cart" class="product-page__go-to-cart-link"
+              >Go to cart</NuxtLink
+            >
+          </div>
+        </page-toast>
+      </div>
     </section>
   </div>
 </template>
@@ -22,11 +35,23 @@
 const { addItem } = useCart();
 const route = useRoute();
 
+const toastShouldShow = ref(false);
+
 // TODO: clean up data fetching from API
 const response = await fetch(
   `https://fakestoreapi.com/products/${route.params.slug}`
 );
 const product = await response.json();
+
+const handleAddToCart = () => {
+  // TODO: in a real world there would be some error handling here
+  addItem(product);
+  showToast(true);
+};
+
+const showToast = (shouldShow: boolean) => {
+  toastShouldShow.value = shouldShow;
+};
 </script>
 
 <style lang="scss">
@@ -51,5 +76,13 @@ const product = await response.json();
 .product-page__content {
   grid-column-start: 3;
   grid-column-end: -1;
+}
+
+.product-page__success-message {
+  font-weight: bold;
+}
+
+.product-page__go-to-cart-link {
+  display: block;
 }
 </style>

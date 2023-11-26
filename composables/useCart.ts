@@ -14,6 +14,10 @@ const useCart = () => {
   };
 
   const addItem: CartItemHandler = (item) => {
+    if (cart.value.includes(item)) {
+      return;
+    }
+
     const updatedItems = [...cart.value, item];
     updateCart(updatedItems);
   };
