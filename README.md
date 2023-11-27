@@ -2,9 +2,27 @@
 
 > A simple add to cart feature in Nuxt 3.
 
+## Prerequisites
+This project uses Node v18 or above. Make sure you use at least Node v18 to run this project.
+
+```bash
+nvm use 18
+
+# or, if you don't have it installed already
+nvm install 18
+```
+
 ## Getting started
 
 Clone the repository from GitHub
+
+```bash
+# ssh
+git clone git@github.com:kriskuiper/nuxt-add-to-cart.git
+
+# https
+git clone https://github.com/kriskuiper/nuxt-add-to-cart.git
+```
 
 ## Installation
 
