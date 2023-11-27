@@ -46,6 +46,12 @@ We've got some cli commands you can use for local development.
 | `npm run test:e2e`     | Run Playwright E2E tests in CI mode                                     |
 | `npm run test:e2e:dev` | Run Playwright E2E tests in watch mode                                  |
 
+## Testing
+
+This application uses [Playwright](https://playwright.dev/) for it's E2E tests.
+
+> ⚠️ Before running `npm run test:e2e` or `npm run test:e2e:ui` make sure the application is live on `http://localhost:3000` by running either `npm run dev` or `npm run build && npm run preview`.
+
 ## Production
 
 Build the application for production
@@ -69,6 +75,6 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - [ ] Clean up fetching data from the API
 - [ ] Clean up inconsistencies
 - [ ] Update README with the following
-  - Docs for testing
   - Docs for deployment etc.
+- [ ] Make tests work in CI by updating Playwright config with start command
 - [ ] Add error handling where necessary
