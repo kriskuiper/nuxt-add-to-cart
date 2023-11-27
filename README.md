@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# nuxt-add-to-cart
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+> A simple add to cart feature in Nuxt 3.
 
 ## Getting started
 
