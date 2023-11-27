@@ -2,77 +2,48 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+## Getting started
+
+Clone the repository from GitHub
+
 ## Installation
 
-Install dependencies using your package manager
+Install dependencies using your preferred package manager
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
 ## Development
 
-Start the development server on `http://localhost:3000`:
+We've got some cli commands you can use for local development.
 
-```bash
-# npm
-npm run dev
+### Commands
 
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
+| **Command**            | **Description**                                                         |
+|------------------------|-------------------------------------------------------------------------|
+| `npm run dev`          | Start the development server on [localhost:3000](http://localhost:3000) |
+| `npm run build`        | Create a production build                                               |
+| `npm run preview`      | Start a production server on [localhost:3000](http://localhost:3000)    |
+| `npm run test:e2e`     | Run Playwright E2E tests in CI mode                                     |
+| `npm run test:e2e:dev` | Run Playwright E2E tests in watch mode                                  |
 
 ## Production
 
-Build the application for production:
+Build the application for production
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Locally preview production build (useful for running Playwright tests against)
 
 ```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Deployment
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information. I'd prefer to host this application on either Netlify or Cloudlfare Pages for simplicity sake.
 
 ## Wishlist
 
@@ -82,3 +53,4 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - [ ] Update README with the following
   - Docs for testing
   - Docs for deployment etc.
+- [ ] Add error handling where necessary
