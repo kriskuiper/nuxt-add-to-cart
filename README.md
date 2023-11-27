@@ -48,7 +48,7 @@ We've got some cli commands you can use for local development.
 
 ## Testing
 
-This application uses [Playwright](https://playwright.dev/) for it's E2E tests.
+This application uses [Playwright](https://playwright.dev/) for its E2E tests.
 
 > ⚠️ Before running `npm run test:e2e` or `npm run test:e2e:ui` make sure the application is live on `http://localhost:3000` by running either `npm run dev` or `npm run build && npm run preview`.
 
